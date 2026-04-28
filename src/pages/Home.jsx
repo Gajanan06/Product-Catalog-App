@@ -1,14 +1,17 @@
 import data from "../data/data.json";
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
-  const groupedData = {};
+    const navigate = useNavigate();
 
-  data.forEach((item) => {
-    if (!groupedData[item.category]) {
-      groupedData[item.category] = [];
+    const groupedData = data.reduce((acc, item) => {
+    if (!acc[item.category]) {
+      acc[item.category] = [];
     }
-    groupedData[item.category].push(item);
-  });
+    acc[item.category].push(item);
+    return acc;
+  }, {});
   console.log(groupedData);
 
   return (
@@ -18,12 +21,22 @@ const Home = () => {
           <h3>{category}</h3>
 
           <div className="grid">
-            {groupedData[category].map((item) => (
-              <div key={item.id} className="card">
-                <img src={item.image} alt={item.itemname} />
-                <p>{item.itemname}</p>
-              </div>
-            ))}
+            {groupedData[category].map((item) => {
+  const originalIndex = data.findIndex(
+    (d) => d.itemname === item.itemname
+  );
+
+  return (
+    <div
+      key={originalIndex}
+      className="card"
+      onClick={() => navigate(`/product/${originalIndex}`)}
+    >
+      <img src={item.image} alt={item.itemname} />
+      <p>{item.itemname}</p>
+    </div>
+  );
+})}
           </div>
         </div>
       ))}
