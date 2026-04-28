@@ -1,16 +1,78 @@
-# React + Vite
+# Product Catalog App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive web application that displays a multi-category product catalog with dynamic item details rendering.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Category-based product listing (Cars, Bikes, Phones, Computers)
+- Dynamic product detail page
+- Handles different properties for each category using `itemprops`
+- Fully responsive design (mobile, tablet, desktop)
+- Smooth navigation using React Router
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (Vite)
+- React Router
+- CSS (Custom styling)
+
+---
+
+## Approach
+
+The application reads product data from a JSON file and dynamically groups items by category using JavaScript.
+
+Each product is displayed in a category section on the home page. When a product is clicked, the app navigates to a detail page where all product attributes are rendered dynamically by iterating through the `itemprops` array.
+
+This approach ensures flexibility, allowing different categories to have different specifications without hardcoding fields.
+
+---
+
+## Project Structure
+
+```
+src/
+ ├── components/
+ │     └── Header.jsx
+ ├── pages/
+ │     ├── Home.jsx
+ │     └── ProductDetail.jsx
+ ├── data/
+ │     └── data.json
+ ├── App.jsx
+ ├── main.jsx
+ ├── index.css
+```
+---
+
+## Installation & Setup
+
+git clone https://github.com/Gajanan06/Product-Catalog-App
+cd product-catalog-app
+npm install
+npm run dev
+
+---
+
+## Time Taken
+
+Approximately 4-5 hours to complete including development, debugging, and UI improvements.
+
+---
+
+## Key Highlights
+
+- Dynamic rendering without hardcoding fields
+- Clean and reusable component structure
+- Responsive and user-friendly UI
+- Error handling for missing data
+
+---
+
+## Conclusion
+
+This project demonstrates strong fundamentals in React, dynamic UI rendering, and clean component-based architecture.

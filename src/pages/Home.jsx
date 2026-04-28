@@ -12,7 +12,7 @@ const Home = () => {
     acc[item.category].push(item);
     return acc;
   }, {});
-  console.log(groupedData);
+//   console.log(groupedData);
 
   return (
     <div className="container">
