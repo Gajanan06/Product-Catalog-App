@@ -51,10 +51,10 @@ src/
 
 ## Installation & Setup
 
-git clone https://github.com/Gajanan06/Product-Catalog-App
-cd product-catalog-app
-npm install
-npm run dev
+- git clone https://github.com/Gajanan06/Product-Catalog-App
+- cd product-catalog-app
+- npm install
+- npm run dev
 
 ---
 

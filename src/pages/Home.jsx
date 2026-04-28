@@ -22,21 +22,20 @@ const Home = () => {
 
           <div className="grid">
             {groupedData[category].map((item) => {
-  const originalIndex = data.findIndex(
-    (d) => d.itemname === item.itemname
-  );
+            const originalIndex = data.findIndex(
+            (d) => d.itemname === item.itemname
+            );
 
-  return (
-    <div
-      key={originalIndex}
-      className="card"
-      onClick={() => navigate(`/product/${originalIndex}`)}
-    >
-      <img src={item.image} alt={item.itemname} />
-      <p>{item.itemname}</p>
-    </div>
-  );
-})}
+         return (
+         <div
+          key={originalIndex}
+          className="card"
+          onClick={() => navigate(`/product/${originalIndex}`)}>
+         <img src={item.image} alt={item.itemname} />
+          <p>{item.itemname}</p>
+          </div>
+          );
+          })}
           </div>
         </div>
       ))}
